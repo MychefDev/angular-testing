@@ -1,0 +1,57 @@
+<div class="navbar">
+    <h1>MultiTool App</h1>
+    <ul>
+        <li>
+            <a routerLink="/" routerLinkActive="active">Home</a>
+        </li>
+        <li>
+            <a (click)="scrollToComponent('todo-list')">To do List</a>
+        </li>
+        <li>
+            <a (click)="scrollToComponent('calculator')">Calculator</a>
+        </li>
+        <li>
+            <a (click)="scrollToComponent('chronometer')">Chronometer</a>
+        </li>
+        <li>
+            <a (click)="scrollToComponent('myuser')">My User Info</a>
+        </li>
+        <li (click)="logout()">Logout</li>
+    </ul>
+</div>
+
+<div class="content" id="home">
+    <h2>Welcome to the MultiTool App!</h2>
+    <p>Select an option from the menu above to get started.</p>
+    <p>
+        This project is designed to facilitate unit testing, integration testing, and end-to-end (E2E) testing for various utilities. 
+        Each tool included in this application serves as a functional example to demonstrate the importance of testing in software development.
+    </p>
+    <p>
+        You can explore features like the To-Do List, Calculator, and Chronometer, all of which are structured to be tested individually and as part of the entire application.
+    </p>
+    <p>
+        We encourage you to try out all types of tests where you think it is necessary to ensure the functionality and reliability of the application.
+    </p>
+</div>
+
+<div class="content" id="todo-list">
+    <app-todo-list [user]="user"></app-todo-list>
+</div>
+
+<div class="content" id="calculator">
+    <app-calculator></app-calculator>
+</div>
+
+<div class="content" id="chronometer">
+    <app-chronometer></app-chronometer>
+</div>
+
+<div class="content" id="myuser">
+    <app-user-info [user]="user" (userLogout)="logout()"></app-user-info>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 MultiTool App. Mychef Technologies S.L.U. All rights reserved.</p>
+    <p>Developed by Pau Llobet</p>
+</footer>

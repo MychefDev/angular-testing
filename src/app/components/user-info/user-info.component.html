@@ -1,0 +1,42 @@
+<h2>User Information</h2>
+<div class="user-info">
+    <div style="text-align: center;">
+        <div class="user-details">
+            <div class="user-detail">
+                <strong>ID:</strong>
+                <span>{{ user.id }}</span>
+            </div>
+            <div class="user-detail">
+                <strong>Username:</strong>
+                <span>{{ user.username }}</span>
+            </div>
+            <div class="user-detail">
+                <strong>Email:</strong>
+                <span>{{ user.email }}</span>
+            </div>
+            <div class="user-detail">
+                <strong>Full Name:</strong>
+                <span>{{getFullName()}}</span>
+            </div>
+            <div class="user-detail">
+                <strong>First Name:</strong>
+                <span>{{ user.firstName }}</span>
+            </div>
+            <div class="user-detail">
+                <strong>Last Name:</strong>
+                <span>{{ user.lastName }}</span>
+            </div>
+            <div class="user-detail">
+                <strong>Gender:</strong>
+                <span>{{ user.gender }}</span>
+            </div>
+            <div class="user-detail">
+                <strong>Image:</strong>
+                <span><img [src]="user.image" alt="{{ user.firstName }}'s image" class="user-image" /></span>
+            </div>
+        </div>
+        <div class="button-container">
+            <button (click)="logout()">Logout</button>
+        </div>
+    </div>
+</div>

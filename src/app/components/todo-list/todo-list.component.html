@@ -1,0 +1,34 @@
+<h2>Todo List for {{ capitalizeFirstLetter(user.username) }}</h2>
+<div class="todo-list">
+    <div class="todo-input">
+        <input type="text" [(ngModel)]="newTodo" placeholder="Enter a new task" />
+        <button class="addButton" (click)="addTodo()">Add Todo</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Task</th>
+                <th>Completed</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todos">
+                <td>{{ todo.id }}</td>
+                <td>
+                    <input type="text" [(ngModel)]="todo.todo" (blur)="updateTodo(todo)" />
+                </td>
+                <td>
+                    <input type="checkbox" [checked]="todo.completed" (change)="toggleCompletion(todo)">
+                </td>
+                <td>
+                    <button class="removeButton" (click)="deleteTodo(todo.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="todos.length === 0">
+        <p>No todos found.</p>
+    </div>
+</div>
